@@ -43,6 +43,7 @@ HTMLWidgets.widget({
     chord.padAngle(x.options.padding)
         .sortSubgroups(d3.descending);
 
+    d3.select(el).select("g").selectAll("g").remove() //Create a blank canvas
     var s = d3.select(el).select("g").datum(chord(x.matrix));
     var diameter = Math.min(x.options.width, x.options.height);
     var innerRadius = Math.min(x.options.width, x.options.height) * .31;
